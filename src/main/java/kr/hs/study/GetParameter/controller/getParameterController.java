@@ -1,5 +1,6 @@
 package kr.hs.study.GetParameter.controller;
 
+import kr.hs.study.GetParameter.dto.login;
 import kr.hs.study.GetParameter.dto.test7;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -96,6 +97,13 @@ public class getParameterController {
     @GetMapping("/test8")
     public String login_form(){
         return "login_form";
+    }
+
+    @PostMapping("/test8")
+    public String login(@ModelAttribute login l){
+        System.out.println("ID : "+l.getUser_id());
+        System.out.println("Password : "+l.getUser_pass());
+        return "result";
     }
 
     @GetMapping("/test7")
